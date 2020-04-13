@@ -147,6 +147,10 @@ MonoBehaviour:
     type: 3}
   plainBlock: {fileID: 6699659018165808745, guid: d3892835f92d7704c8b388093912571d,
     type: 3}
+  left: {fileID: 3568020241439817090, guid: 7c87af8c1c60ca14799a19de07385aa2, type: 3}
+  up: {fileID: 1326543070076404631, guid: c8c9aea4510e31f419f98325f270b14a, type: 3}
+  down: {fileID: 2339748275283231669, guid: 39438d7e279d30c468e0113806753acc, type: 3}
+  right: {fileID: 8956666057995475381, guid: a32a87e8d474e3b488c2e192638b9d3b, type: 3}
   mapSet: 0
 --- !u!224 &1327083067
 RectTransform:

@@ -1052,6 +1052,360 @@
        r="7.9645834"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.07462271,3.4713722,-3.7558284,0.08073738,472.15595,-267.76262)" />
+    <filter
+       inkscape:label="Button"
+       inkscape:menu="Bevels"
+       inkscape:menu-tooltip="Soft bevel, slightly depressed middle"
+       style="color-interpolation-filters:sRGB;"
+       id="filter7135">
+      <feGaussianBlur
+         stdDeviation="2.3"
+         in="SourceAlpha"
+         result="result0"
+         id="feGaussianBlur7109" />
+      <feMorphology
+         in="SourceAlpha"
+         radius="6.6"
+         result="result1"
+         id="feMorphology7111" />
+      <feGaussianBlur
+         stdDeviation="8.9"
+         in="result1"
+         id="feGaussianBlur7113" />
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.3 0"
+         result="result91"
+         id="feColorMatrix7115" />
+      <feComposite
+         in="result0"
+         operator="out"
+         result="result2"
+         in2="result91"
+         id="feComposite7117" />
+      <feGaussianBlur
+         stdDeviation="1.7"
+         result="result4"
+         id="feGaussianBlur7119" />
+      <feDiffuseLighting
+         surfaceScale="10"
+         id="feDiffuseLighting7123">
+        <feDistantLight
+           azimuth="225"
+           elevation="45"
+           id="feDistantLight7121" />
+      </feDiffuseLighting>
+      <feBlend
+         in2="SourceGraphic"
+         mode="multiply"
+         id="feBlend7125" />
+      <feComposite
+         in2="SourceAlpha"
+         operator="in"
+         result="result3"
+         id="feComposite7127" />
+      <feSpecularLighting
+         in="result4"
+         surfaceScale="5"
+         specularExponent="17.9"
+         id="feSpecularLighting7131">
+        <feDistantLight
+           azimuth="225"
+           elevation="45"
+           id="feDistantLight7129" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result3"
+         operator="atop"
+         id="feComposite7133" />
+    </filter>
+    <filter
+       inkscape:label="Button"
+       inkscape:menu="Bevels"
+       inkscape:menu-tooltip="Soft bevel, slightly depressed middle"
+       style="color-interpolation-filters:sRGB;"
+       id="filter7178">
+      <feGaussianBlur
+         stdDeviation="2.3"
+         in="SourceAlpha"
+         result="result0"
+         id="feGaussianBlur7152" />
+      <feMorphology
+         in="SourceAlpha"
+         radius="6.6"
+         result="result1"
+         id="feMorphology7154" />
+      <feGaussianBlur
+         stdDeviation="8.9"
+         in="result1"
+         id="feGaussianBlur7156" />
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.3 0"
+         result="result91"
+         id="feColorMatrix7158" />
+      <feComposite
+         in="result0"
+         operator="out"
+         result="result2"
+         in2="result91"
+         id="feComposite7160" />
+      <feGaussianBlur
+         stdDeviation="1.7"
+         result="result4"
+         id="feGaussianBlur7162" />
+      <feDiffuseLighting
+         surfaceScale="10"
+         id="feDiffuseLighting7166">
+        <feDistantLight
+           azimuth="225"
+           elevation="45"
+           id="feDistantLight7164" />
+      </feDiffuseLighting>
+      <feBlend
+         in2="SourceGraphic"
+         mode="multiply"
+         id="feBlend7168" />
+      <feComposite
+         in2="SourceAlpha"
+         operator="in"
+         result="result3"
+         id="feComposite7170" />
+      <feSpecularLighting
+         in="result4"
+         surfaceScale="5"
+         specularExponent="17.9"
+         id="feSpecularLighting7174">
+        <feDistantLight
+           azimuth="225"
+           elevation="45"
+           id="feDistantLight7172" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result3"
+         operator="atop"
+         id="feComposite7176" />
+    </filter>
+    <filter
+       inkscape:menu="Shadows and Glows"
+       inkscape:menu-tooltip="Cut out, add inner shadow and colorize some parts of an image"
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Emergence"
+       id="filter7247">
+      <feColorMatrix
+         values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.21 0.72 0.07 0 0 "
+         result="result1"
+         id="feColorMatrix7219" />
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 2 0 "
+         result="result9"
+         id="feColorMatrix7221" />
+      <feComposite
+         in2="result9"
+         in="SourceGraphic"
+         operator="in"
+         result="result4"
+         id="feComposite7223" />
+      <feFlood
+         result="result2"
+         flood-color="rgb(0,0,0)"
+         id="feFlood7225" />
+      <feComposite
+         in2="result9"
+         operator="in"
+         result="result10"
+         id="feComposite7227" />
+      <feComposite
+         in2="result4"
+         operator="atop"
+         id="feComposite7229" />
+      <feGaussianBlur
+         stdDeviation="3"
+         result="result8"
+         id="feGaussianBlur7231" />
+      <feOffset
+         dx="3"
+         dy="3"
+         result="result3"
+         in="result8"
+         id="feOffset7233" />
+      <feFlood
+         flood-opacity="1"
+         flood-color="rgb(219,173,62)"
+         result="result5"
+         id="feFlood7235" />
+      <feMerge
+         result="result6"
+         id="feMerge7243">
+        <feMergeNode
+           in="result5"
+           id="feMergeNode7237" />
+        <feMergeNode
+           in="result3"
+           id="feMergeNode7239" />
+        <feMergeNode
+           in="result4"
+           id="feMergeNode7241" />
+      </feMerge>
+      <feComposite
+         in2="SourceGraphic"
+         operator="in"
+         result="result7"
+         id="feComposite7245" />
+    </filter>
+    <filter
+       inkscape:menu-tooltip="Pressed metal with a rolled edge"
+       inkscape:menu="Bevels"
+       inkscape:label="Pressed Steel"
+       style="color-interpolation-filters:sRGB;"
+       id="filter7372">
+      <feGaussianBlur
+         result="result1"
+         stdDeviation="3"
+         id="feGaussianBlur7350" />
+      <feBlend
+         in2="result1"
+         result="result5"
+         mode="multiply"
+         in="result1"
+         id="feBlend7352" />
+      <feGaussianBlur
+         in="result5"
+         result="result6"
+         stdDeviation="1"
+         id="feGaussianBlur7354" />
+      <feComposite
+         result="result8"
+         in2="result5"
+         in="result6"
+         operator="xor"
+         id="feComposite7356" />
+      <feComposite
+         in="result6"
+         result="fbSourceGraphic"
+         operator="xor"
+         in2="result8"
+         id="feComposite7358" />
+      <feSpecularLighting
+         in="fbSourceGraphic"
+         result="result1"
+         lighting-color="rgb(255,255,255)"
+         surfaceScale="2"
+         specularConstant="2.2"
+         specularExponent="55"
+         id="feSpecularLighting7362">
+        <fePointLight
+           x="-5000"
+           y="-10000"
+           z="20000"
+           id="fePointLight7360" />
+      </feSpecularLighting>
+      <feComposite
+         in2="fbSourceGraphic"
+         in="result1"
+         result="result2"
+         operator="in"
+         id="feComposite7364" />
+      <feComposite
+         in="fbSourceGraphic"
+         result="result4"
+         operator="arithmetic"
+         k2="2"
+         k3="1"
+         in2="result2"
+         id="feComposite7366" />
+      <feComposite
+         in2="result4"
+         in="result4"
+         operator="in"
+         result="result91"
+         id="feComposite7368" />
+      <feBlend
+         mode="darken"
+         in2="result91"
+         id="feBlend7370" />
+    </filter>
+    <filter
+       inkscape:label="Metallized Paint"
+       inkscape:menu="Materials"
+       inkscape:menu-tooltip="Metallized effect with a soft lighting, slightly translucent at the edges"
+       style="color-interpolation-filters:sRGB;"
+       id="filter7733">
+      <feGaussianBlur
+         stdDeviation="1"
+         result="result1"
+         id="feGaussianBlur7707" />
+      <feComposite
+         in="result1"
+         in2="result1"
+         result="result4"
+         operator="in"
+         id="feComposite7709" />
+      <feBlend
+         in="result1"
+         mode="screen"
+         result="result5"
+         in2="result4"
+         id="feBlend7711" />
+      <feGaussianBlur
+         stdDeviation="8"
+         result="result6"
+         in="result5"
+         id="feGaussianBlur7713" />
+      <feComposite
+         operator="atop"
+         in="result6"
+         in2="result5"
+         result="result8"
+         id="feComposite7715" />
+      <feComposite
+         operator="in"
+         result="fbSourceGraphic"
+         in="result6"
+         in2="result8"
+         id="feComposite7717" />
+      <feGaussianBlur
+         result="result0"
+         in="fbSourceGraphic"
+         stdDeviation="2.5"
+         id="feGaussianBlur7719" />
+      <feSpecularLighting
+         specularExponent="45"
+         specularConstant="1.5"
+         surfaceScale="1"
+         lighting-color="rgb(255,255,255)"
+         result="result1"
+         in="result0"
+         id="feSpecularLighting7723">
+        <fePointLight
+           z="21000"
+           y="-9000"
+           x="-6000"
+           id="fePointLight7721" />
+      </feSpecularLighting>
+      <feComposite
+         operator="in"
+         result="result2"
+         in="result1"
+         in2="fbSourceGraphic"
+         id="feComposite7725" />
+      <feComposite
+         k3="1"
+         k2="1"
+         operator="arithmetic"
+         result="result4"
+         in="fbSourceGraphic"
+         in2="result2"
+         id="feComposite7727" />
+      <feComposite
+         operator="in"
+         in="result9"
+         in2="result4"
+         result="result91"
+         id="feComposite7729" />
+      <feBlend
+         mode="multiply"
+         in2="result91"
+         id="feBlend7731" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -1089,20 +1443,21 @@
      id="layer1">
     <g
        id="g4795"
-       transform="matrix(0.55079421,0,0,0.61724323,-18.088694,41.12612)">
+       transform="matrix(0.55079421,0,0,0.61724323,-18.088694,41.12612)"
+       style="fill:#000000">
       <rect
          y="125.81461"
          x="-34.685982"
          height="14.35717"
          width="2.4867516"
          id="rect4786"
-         style="opacity:1;fill:#ff0000;fill-opacity:1;stroke:#ff1414;stroke-width:2.01179671;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:#ff1414;stroke-width:2.01179671;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       <path
          sodipodi:nodetypes="ccccc"
          inkscape:connector-curvature="0"
          id="rect4790"
          d="m -33.36354,116.17661 v 0 l 5.842543,9.01881 h -11.867666 z"
-         style="opacity:1;fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-width:1.02097952;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:#ff0000;stroke-width:1.02097952;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
     <rect
        style="opacity:1;fill:#00ff00;fill-opacity:1;stroke:#00ff00;stroke-width:2.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4872-4)"
@@ -1133,31 +1488,158 @@
        x="66.406487"
        y="177.7162" />
     <rect
-       style="opacity:1;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1.85944366;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1.67349935;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4836-7-4-4"
-       width="24.598888"
-       height="24.59889"
-       x="104.96544"
-       y="93.335503"
+       width="22.139002"
+       height="22.139"
+       x="104.87247"
+       y="95.888359"
        inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="C:\Users\LENOVO\Documents\CIA3Q1\Assets\Images\red.png" />
     <rect
-       style="opacity:1;fill:#00ff11;fill-opacity:1;stroke:#000000;stroke-width:1.85944366;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#00ff11;fill-opacity:1;stroke:#000000;stroke-width:1.67349935;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4836-7-4-4-9"
-       width="24.598888"
-       height="24.59889"
-       x="151.9839"
-       y="97.39579"
+       width="22.139002"
+       height="22.139"
+       x="151.89093"
+       y="99.948647"
        inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="C:\Users\LENOVO\Documents\CIA3Q1\Assets\Images\green.png" />
     <rect
-       style="opacity:1;fill:#ffeeaa;fill-opacity:1;stroke:#000000;stroke-width:1.85944366;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#ffeeaa;fill-opacity:1;stroke:#000000;stroke-width:1.67349935;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4836-7-4-4-9-4"
-       width="24.598888"
-       height="24.59889"
-       x="155.58099"
-       y="140.92065"
+       width="22.139002"
+       height="22.139"
+       x="155.48802"
+       y="143.47351"
        inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="C:\Users\LENOVO\Documents\CIA3Q1\Assets\Images\plain.png" />
+    <rect
+       style="opacity:1;fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-width:1.67349935;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter7178)"
+       id="rect4836-7-4-4-1"
+       width="22.139002"
+       height="22.139002"
+       x="63.030689"
+       y="65.068764"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="C:\Users\LENOVO\Documents\CIA3Q1\Assets\Images\red.png" />
+    <rect
+       style="opacity:1;fill:#00ff11;fill-opacity:1;stroke:#000000;stroke-width:1.67349935;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter7247)"
+       id="rect4836-7-4-4-9-3"
+       width="22.139002"
+       height="22.139002"
+       x="137.4906"
+       y="65.78817"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="C:\Users\LENOVO\Documents\CIA3Q1\Assets\Images\green.png" />
+    <rect
+       style="opacity:1;fill:#ffeeaa;fill-opacity:1;stroke:#000000;stroke-width:1.67349935;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter7372)"
+       id="rect4836-7-4-4-9-4-2"
+       width="22.139002"
+       height="22.139002"
+       x="136.77118"
+       y="188.08946"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="C:\Users\LENOVO\Documents\CIA3Q1\Assets\Images\plain.png" />
+    <g
+       id="g7384"
+       transform="matrix(0.59743911,0,0,0.58341136,130.05831,107.34081)"
+       style="stroke-width:1.69381392"
+       inkscape:export-filename="C:\Users\LENOVO\Documents\CIA3Q1\Assets\Images\up.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         y="166.35701"
+         x="-56.61998"
+         height="11.870419"
+         width="2.8776772"
+         id="rect7377"
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:#ff0000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         sodipodi:nodetypes="ccccc"
+         inkscape:connector-curvature="0"
+         id="rect7379"
+         d="m -54.896033,159.2312 v 0 l 6.255139,9.27235 h -12.509748 z"
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:#ff0000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <g
+       id="g7384-5"
+       transform="matrix(-0.01890852,0.59713981,-0.58311909,-0.01846455,234.76038,259.87489)"
+       style="stroke-width:1.69381392"
+       inkscape:export-filename="C:\Users\LENOVO\Documents\CIA3Q1\Assets\Images\right.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         y="166.35701"
+         x="-56.61998"
+         height="11.870419"
+         width="2.8776772"
+         id="rect7377-6"
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:#ff0000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         sodipodi:nodetypes="ccccc"
+         inkscape:connector-curvature="0"
+         id="rect7379-7"
+         d="m -54.896033,159.2312 v 0 l 6.255139,9.27235 h -12.509748 z"
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:#ff0000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <g
+       id="g7384-0"
+       transform="matrix(0.59743911,0,0,-0.58341136,85.314491,302.2738)"
+       style="stroke-width:1.69381392"
+       inkscape:export-filename="C:\Users\LENOVO\Documents\CIA3Q1\Assets\Images\down.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         y="166.35701"
+         x="-56.61998"
+         height="11.870419"
+         width="2.8776772"
+         id="rect7377-8"
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:#ff0000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         sodipodi:nodetypes="ccccc"
+         inkscape:connector-curvature="0"
+         id="rect7379-6"
+         d="m -54.896033,159.2312 v 0 l 6.255139,9.27235 h -12.509748 z"
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:#ff0000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <g
+       id="g7384-5-6"
+       transform="matrix(0.01890852,0.59713982,0.5831191,-0.01846455,2.9968087,268.14404)"
+       style="stroke-width:1.69381392"
+       inkscape:export-filename="C:\Users\LENOVO\Documents\CIA3Q1\Assets\Images\left.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         y="166.35701"
+         x="-56.61998"
+         height="11.870419"
+         width="2.8776772"
+         id="rect7377-6-4"
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:#ff0000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         sodipodi:nodetypes="ccccc"
+         inkscape:connector-curvature="0"
+         id="rect7379-7-8"
+         d="m -54.896033,159.2312 v 0 l 6.255139,9.27235 h -12.509748 z"
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:#ff0000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <rect
+       style="opacity:1;fill:#00ff11;fill-opacity:1;stroke:#000000;stroke-width:1.67349935;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter7733)"
+       id="rect4836-7-4-4-9-6"
+       width="22.139002"
+       height="22.139002"
+       x="180.65576"
+       y="66.507584"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="C:\Users\LENOVO\Documents\CIA3Q1\Assets\Images\green.png" />
   </g>
 </svg>
