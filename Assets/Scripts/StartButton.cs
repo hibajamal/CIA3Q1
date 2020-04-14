@@ -48,9 +48,9 @@ public class StartButton : MonoBehaviour
             grid.GetComponent<Grid>().Clear();
         }
         choice++;
-        if (choice > 3)
-            choice = 1;
-        grid.GetComponent<Grid>().CreateGrid(choice.ToString());
+        if (choice > 2)
+            choice = 0;
+        grid.GetComponent<Grid>().CreateGrid(choice);
     }
 
     public void StartSimulation()
@@ -60,5 +60,10 @@ public class StartButton : MonoBehaviour
         else
             grid.GetComponent<Grid>().run = true;
 
+    }
+
+    public void End()
+    {
+        Application.Quit();
     }
 }

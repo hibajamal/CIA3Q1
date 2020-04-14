@@ -56,13 +56,21 @@ public class Grid : MonoBehaviour
     public float discountRate = 0.9f;
 
     //private bool rewardSet = false;
-    private float tileSize = .9f;
+    private float tileSize = .6f;
     private float t;
     private Vector3 worldStart;
 
+    // sample grids
+    private List<List<string>> sampleGrids = new List<List<string>>();
+    
     // Start is called before the first frame update
     void Start()
     {
+        // add three grids
+        sampleGrids.Add(new List<string> { "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "1", "1", "1", "1", "0", "1", "1", "1", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "2" });
+        sampleGrids.Add(new List<string> { "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "1", "1", "1", "1", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "1", "1", "0", "0", "1", "1", "1", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "1", "1", "1", "1", "1", "1", "1", "2" });
+        sampleGrids.Add(new List<string> { "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "1", "1", "1", "1", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "2", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "1", "1", "1", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" });
+
         mapSet = false;
         run = false;
         t = 0;
@@ -72,24 +80,27 @@ public class Grid : MonoBehaviour
         //CreateGrid("1");
     }
 
-    public void CreateGrid(string textfile)
+    public void CreateGrid(int textfile)
     {
         converged = false;
-        int i = 0;
-        foreach (string line in File.ReadLines(@"Assets/Gridworlds/"+textfile+".txt", Encoding.UTF8))
+        //int i = 0;
+        List<string> lines = sampleGrids[textfile];
+        for (int i=0; i<10; i++)
+        //foreach (string line in File.ReadLines(@"Assets/Gridworlds/"+textfile+".txt", Encoding.UTF8))
         {
-            int j = 0;
-            foreach (char el in line)
+            //int j = 0;
+            for (int j=0; j<10; j++)
+            //foreach (char el in line)
             {
                 GridBlock block = new GridBlock();
-                if (el == '2')
+                if (lines[(i*10)+j] == "2")
                 {
                     block.obj = Instantiate(greenBlock, this.transform);
                     block.value = 0;
                     block.reward = 100;
                     block.invalMove = true;
                 }
-                else if (el == '1')
+                else if (lines[(i * 10) + j] == "1")
                 {
                     block.obj = Instantiate(redBlock, this.transform);
                     block.value = -0;
@@ -110,9 +121,9 @@ public class Grid : MonoBehaviour
                 block.x = i;
                 block.y = j;
                 grid.Add(block);
-                ++j;
+                //++j;
             }
-            i++;
+            //i++;
         }
         mapSet = true;
     }
