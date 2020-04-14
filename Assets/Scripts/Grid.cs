@@ -48,29 +48,37 @@ public class Grid : MonoBehaviour
     public GameObject down;
     public GameObject right;
 
-    public List<List<GridBlock>> grid = new List<List<GridBlock>>();
-
-    public bool mapSet = false;
+    //public List<List<GridBlock>> grid = new List<List<GridBlock>>();
+    public List<GridBlock> grid = new List<GridBlock>();
+    public bool mapSet;
+    public bool run;
+    public bool converged;
 
     //private bool rewardSet = false;
     private float tileSize = .9f;
     private float t;
+    private Vector3 worldStart;
+
     // Start is called before the first frame update
     void Start()
     {
+        mapSet = false;
+        run = false;
         t = 0;
-        Vector3 worldStart = GetComponent<RectTransform>().transform.position;
-        //for (int i=0; i<10; i++)
-        int i = -1;
-        foreach (string line in File.ReadLines(@"Assets/Gridworlds/1.txt", Encoding.UTF8))
+        worldStart = GetComponent<RectTransform>().transform.position;
+        //CreateGrid("1");
+    }
+
+    public void CreateGrid(string textfile)
+    {
+        converged = false;
+        int i = 0;
+        foreach (string line in File.ReadLines(@"Assets/Gridworlds/"+textfile+".txt", Encoding.UTF8))
         {
-            ++i;
-            List<GridBlock> gridline = new List<GridBlock>();
-            GridBlock block = new GridBlock();
-            //for (int j=0; j<10; j++)
             int j = 0;
             foreach (char el in line)
             {
+                GridBlock block = new GridBlock();
                 if (el == '2')
                 {
                     block.obj = Instantiate(greenBlock, this.transform);
@@ -96,93 +104,121 @@ public class Grid : MonoBehaviour
                 block.obj.GetComponent<RectTransform>().transform.position = new Vector3(worldStart.x + tileSize / 2 + (tileSize * j),
                                                               worldStart.y - tileSize / 2 - (tileSize * i),
                                                               0);
-                Debug.Log(block.obj.GetComponent<RectTransform>().transform.position);
                 block.x = i;
                 block.y = j;
-                gridline.Add(block);
+                grid.Add(block);
                 ++j;
             }
-            grid.Add(gridline);
+            i++;
         }
-        mapSet = true;        
+        mapSet = true;
     }
 
     void ValueIteration(float theta, float discount)
     {
-        bool convergence = false;
+        int convergence = 0;
         // one iteration through entire grid
         for (int i=0; i<10; i++) {
             for (int j=0; j<10; j++) {
-                float oldVal = grid[i][j].value;
+                float oldVal = grid[(i * 10) + j].value;
                 float value;
                 bool placed = false;
                 // for up
-                if (i > 0 && !grid[i][j].invalMove) {
-                    value = grid[i - 1][j].reward + (discount * grid[i - 1][j].value);
-                    if (value > grid[i][j].value) {
-                        grid[i][j].value = value;
-                        if (grid[i][j].direction != null)
-                            Destroy(grid[i][j].direction);
-                        grid[i][j].direction = Instantiate(up, grid[i][j].obj.GetComponent<RectTransform>().transform);
+                if (i > 0 && !grid[(i * 10) + j].invalMove) {
+                    value = grid[((i - 1)*10)+j].reward + (discount * grid[((i - 1) * 10)+ j].value);
+                    if (value > grid[(i * 10) + j].value) {
+                        grid[(i * 10) + j].value = value;
+                        if (grid[(i * 10) + j].direction != null)
+                            Destroy(grid[(i * 10) + j].direction);
+                        grid[(i * 10) + j].direction = Instantiate(up, grid[(i * 10) + j].obj.GetComponent<RectTransform>().transform);
                         placed = true;
                     }
                 }
                 // for right
-                if (j < 9 && !grid[i][j].invalMove) {
-                    value = grid[i][j + 1].reward + (discount * grid[i][j + 1].value);
-                    if (value > grid[i][j].value) {
-                        grid[i][j].value = value;
-                        if (grid[i][j].direction != null)
-                            Destroy(grid[i][j].direction);
-                        grid[i][j].direction = Instantiate(right, grid[i][j].obj.GetComponent<RectTransform>().transform);
+                if (j < 9 && !grid[(i * 10) + j].invalMove) {
+                    value = grid[(i * 10) + (j + 1)].reward + (discount * grid[(i * 10) + (j + 1)].value);
+                    if (value > grid[(i * 10) + j].value) {
+                        grid[(i * 10) + j].value = value;
+                        if (grid[(i * 10) + j].direction != null)
+                            Destroy(grid[(i * 10) + j].direction);
+                        grid[(i * 10) + j].direction = Instantiate(right, grid[(i * 10) + j].obj.GetComponent<RectTransform>().transform);
                         placed = true;
                     }
                 }
                 // for left 
-                if (j > 0 && !grid[i][j].invalMove) {
-                    value = grid[i][j - 1].reward + (discount * grid[i][j - 1].value);
-                    if (value > grid[i][j].value) {
-                        grid[i][j].value = value;
-                        if (grid[i][j].direction != null)
-                            Destroy(grid[i][j].direction);
-                        grid[i][j].direction = Instantiate(left, grid[i][j].obj.GetComponent<RectTransform>().transform);
+                if (j > 0 && !grid[(i * 10) + j].invalMove) {
+                    value = grid[(i * 10) + (j - 1)].reward + (discount * grid[(i * 10) + (j - 1)].value);
+                    if (value > grid[(i * 10) + j].value) {
+                        grid[(i * 10) + j].value = value;
+                        if (grid[(i * 10) + j].direction != null)
+                            Destroy(grid[(i * 10) + j].direction);
+                        grid[(i * 10) + j].direction = Instantiate(left, grid[(i * 10) + j].obj.GetComponent<RectTransform>().transform);
                         placed = true;
                     }
                 }
                 // for down
-                if (i < 9 && !grid[i][j].invalMove) {
-                    value = grid[i + 1][j].reward + (discount * grid[i+1][j].value);
-                    if (value > grid[i][j].value) {
-                        grid[i][j].value = value;
-                        if (grid[i][j].direction != null)
-                            Destroy(grid[i][j].direction);
-                        grid[i][j].direction = Instantiate(down, grid[i][j].obj.GetComponent<RectTransform>().transform);
+                if (i < 9 && !grid[(i * 10) + j].invalMove) {
+                    value = grid[((i + 1)*10)+j].reward + (discount * grid[((i + 1) * 10)+ j].value);
+                    if (value > grid[(i * 10) + j].value) {
+                        grid[(i * 10) + j].value = value;
+                        if (grid[(i * 10) + j].direction != null)
+                            Destroy(grid[(i * 10) + j].direction);
+                        grid[(i * 10) + j].direction = Instantiate(down, grid[(i * 10) + j].obj.GetComponent<RectTransform>().transform);
                         placed = true;
                     }
                 }
                 if (placed) {
-                    grid[i][j].direction.GetComponent<RectTransform>().transform.position = new Vector3(grid[i][j].obj.GetComponent<RectTransform>().transform.position.x,
-                                                                                                grid[i][j].obj.GetComponent<RectTransform>().transform.position.y,
+                    grid[(i * 10) + j].direction.GetComponent<RectTransform>().transform.position = new Vector3(grid[(i * 10) + j].obj.GetComponent<RectTransform>().transform.position.x,
+                                                                                                grid[(i * 10) + j].obj.GetComponent<RectTransform>().transform.position.y,
                                                                                                 -1);
-                    Debug.Log("placed");
                 }
-                if (Mathf.Abs(oldVal - grid[i][j].value) <= theta) { 
-                    convergence = true;
-                    //break;
-                }
+                if (Mathf.Abs(oldVal - grid[(i * 10) + j].value) <= theta) 
+                    convergence++;
             }
-            /*if (convergence)
-                break;*/
         }
+        if (convergence == 100)
+            converged = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (t % 10 == 0) { 
-            ValueIteration(0.01f, 0.9f);
-            Debug.Log("one run through value iter done");
+        if (run)
+        {
+            if (t % 15 == 0 && mapSet)
+            {
+                ValueIteration(0.01f, 0.9f);
+                if (converged) { 
+                    run = false;
+                    Debug.Log("converged!");
+                }
+            }
+            t++;
         }
-        t++;
+    }
+    
+    public void Clear()
+    {
+        for (int i=0; i<100; i++)
+        {
+            if (!grid[i].invalMove)
+                Destroy(grid[i].direction);
+            Destroy(grid[i].obj);
+        }
+        grid = new List<GridBlock>();
+    }
+
+    public void Rerun()
+    {
+        Debug.Log("rerunning");
+        converged = false;
+        for (int i=0; i<100; i++)
+        {
+            if (!grid[i].invalMove) { 
+                Destroy(grid[i].direction);
+                grid[i].value = -1;
+            }
+        }
+        run = true;
     }
 }

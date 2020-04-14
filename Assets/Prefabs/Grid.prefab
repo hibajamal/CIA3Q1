@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2135480830578461409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2135480830578461411}
+  - component: {fileID: 2135480830578461410}
+  m_Layer: 0
+  m_Name: Grid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2135480830578461411
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135480830578461409}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -8.1, y: 4.45}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2135480830578461410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135480830578461409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3c3c910214d3447b39c04bcd03a448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redBlock: {fileID: 3074440080846087214, guid: 9780e11f30e229244ae7262cc9bf0c57,
+    type: 3}
+  greenBlock: {fileID: 232508105190764886, guid: 677f0413863d2a84ba0d2c6fab545930,
+    type: 3}
+  plainBlock: {fileID: 6699659018165808745, guid: d3892835f92d7704c8b388093912571d,
+    type: 3}
+  left: {fileID: 3568020241439817090, guid: 7c87af8c1c60ca14799a19de07385aa2, type: 3}
+  up: {fileID: 1326543070076404631, guid: c8c9aea4510e31f419f98325f270b14a, type: 3}
+  down: {fileID: 2339748275283231669, guid: 39438d7e279d30c468e0113806753acc, type: 3}
+  right: {fileID: 8956666057995475381, guid: a32a87e8d474e3b488c2e192638b9d3b, type: 3}
+  mapSet: 0
+  run: 0
