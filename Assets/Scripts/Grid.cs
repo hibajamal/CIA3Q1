@@ -199,7 +199,7 @@ public class Grid : MonoBehaviour
     {
         if (run)
         {
-            if (t % 15 == 0 && mapSet && !converged)
+            if (t % 30 == 0 && mapSet && !converged)
             {
                 Debug.Log(discountRate);
                 ValueIteration(0.01f, discountRate);
