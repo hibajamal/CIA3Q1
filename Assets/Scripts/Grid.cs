@@ -53,6 +53,7 @@ public class Grid : MonoBehaviour
     public bool mapSet;
     public bool run;
     public bool converged;
+    public float discountRate = 0.9f;
 
     //private bool rewardSet = false;
     private float tileSize = .9f;
@@ -66,6 +67,8 @@ public class Grid : MonoBehaviour
         run = false;
         t = 0;
         worldStart = GetComponent<RectTransform>().transform.position;
+        discountRate = 0.9f;
+        Debug.Log(discountRate);
         //CreateGrid("1");
     }
 
@@ -185,9 +188,10 @@ public class Grid : MonoBehaviour
     {
         if (run)
         {
-            if (t % 15 == 0 && mapSet)
+            if (t % 15 == 0 && mapSet && !converged)
             {
-                ValueIteration(0.01f, 0.9f);
+                Debug.Log(discountRate);
+                ValueIteration(0.01f, discountRate);
                 if (converged) { 
                     run = false;
                     Debug.Log("converged!");

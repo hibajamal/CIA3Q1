@@ -10,10 +10,14 @@ public class StartButton : MonoBehaviour
     public Button run;
 
     private int choice;
+    bool firstClick;
+
     // Start is called before the first frame update
     void Start()
     {
+        firstClick = false;
         choice = 0;
+        run.GetComponent<Button>().interactable = false;
     }
 
     // Update is called once per frame
@@ -31,6 +35,12 @@ public class StartButton : MonoBehaviour
 
     public void NewGrid()
     {
+        // if clicked for the first time, enable simulator button
+        if (!firstClick)
+        {
+            run.GetComponent<Button>().interactable = true;
+            firstClick = true;
+        }
         if (grid.GetComponent<Grid>().mapSet) {
             Debug.Log("not supposed to be clicked");
             grid.GetComponent<Grid>().mapSet = false;
