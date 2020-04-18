@@ -3,4 +3,4 @@ Basic implementation of the deterministic Bellman equation for value iteration a
 
 Run the GridWorld.exe file inside the Gridworld folder to run the final simulation.
 
-For implementation purposes: the implentation can be found in Assets/Scripts/Grid.cs
+For implementation purposes: the implentation can be found in Assets/Scripts/Grid.cs in function ValueIteration(theta, discount).
